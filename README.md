@@ -1,24 +1,26 @@
 <p align="center">
   <a href="https://go-skill-icons.vercel.app/">
     <img
-      src="https://go-skill-icons.vercel.app/api/icons?i=javascript,react,nodejs,express,postgres,docker&theme=dark"
+      src="https://go-skill-icons.vercel.app/api/icons?i=javascript,react,nodejs,express,postgres,docker,supabase,vercel,postman,render&theme=dark"
     />
   </a>
 </p>
 
 ## A BOOKING APPOINMENT FOR HEALTHCARE WEBSITE WITH MULTI LANGUAGE
+## :key:Link deploy: 
+:arrow_right:[https://health-booking-git-main-anh-nguyens-projects-e4ee1749.vercel.app/home](https://health-booking-git-main-anh-nguyens-projects-e4ee1749.vercel.app/home)
 
 
-# :key:Table of contents
-:arrow_right:1.[Introduction](https://github.com/anhnnguyen1312/FindingHome/blob/main/README.md#clipboardintroduction)
+## :key:Table of contents
+:arrow_right:1.[Introduction](https://github.com/anhnnguyen1312/HealthBooking/tree/main/README.md#clipboardintroduction)
 
-:arrow_right:2.[Tech Stack](https://github.com/anhnnguyen1312/FindingHome/blob/main/README.md#wrenchtechnologies)
+:arrow_right:2.[Tech Stack](https://github.com/anhnnguyen1312/HealthBooking/tree/main/README.md#wrenchtechnologies)
 
-:arrow_right:3.[Features](https://github.com/anhnnguyen1312/FindingHome/blob/main/README.md#triangular_flag_on_postfeatures)
+:arrow_right:3.[Features](https://github.com/anhnnguyen1312/HealthBooking/tree/main/README.md#triangular_flag_on_postfeatures)
 
-:arrow_right:4.[Installation](https://github.com/anhnnguyen1312/FindingHome/blob/main/README.md#gearinstallation)
+:arrow_right:4.[Installation](https://github.com/anhnnguyen1312/HealthBooking/tree/main/README.md#gearinstallation)
 
-:arrow_right:5.[Demo](https://github.com/anhnnguyen1312/FindingHome/blob/main/README.md#demo)
+:arrow_right:5.[Demo](https://github.com/anhnnguyen1312/HealthBooking/blob/tree/README.md#demo)
 
 ## :clipboard:Introduction 
 
@@ -40,9 +42,11 @@ In particular, doctor could **manage schedule appoinment**, means doctor can **S
 
 :point_right:Back-end: NodeJs(Express framework)
 
-:point_right:Database: Postgres, Navicat
+:point_right:Database: Postgresql, Navicat
 
-:point_right: Other: Docker, Cloundinary
+:point_right: Other: Docker, Cloundinary, Postman
+
+:point_right: Deploy platform: Supabase(postgres db), Vercel(reactjs), Render(nodejs)
 
 
 ## :triangular_flag_on_post:Features
