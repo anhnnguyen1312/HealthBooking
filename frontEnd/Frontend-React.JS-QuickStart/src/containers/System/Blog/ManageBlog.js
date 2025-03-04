@@ -102,7 +102,7 @@ class ManageBlog extends Component {
     console.log("his.state.currentBlogId", this.state.currentBlogId);
 
     console.log("response", response);
-    if (response && response.data.errCode === 0) {
+    if (response && response?.data?.errCode === 0) {
       this.toggleModelConfirm("");
       await this.props.getHandbookRedux();
 

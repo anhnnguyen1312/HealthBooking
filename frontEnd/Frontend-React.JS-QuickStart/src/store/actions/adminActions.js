@@ -23,9 +23,9 @@ export const fetchKeyForm = () => {
       keyForm.roles = RoleRes;
 
       if (checkRes(keyForm)) {
-        keyForm.genders = [...genderRes.data.data];
-        keyForm.positions = [...PositionRes.data.data];
-        keyForm.roles = [...RoleRes.data.data];
+        keyForm.genders = [...genderRes?.data?.data];
+        keyForm.positions = [...PositionRes?.data?.data];
+        keyForm.roles = [...RoleRes?.data?.data];
         console.log("success");
 
         dispatch(fetchKeyFormSuccess(keyForm));

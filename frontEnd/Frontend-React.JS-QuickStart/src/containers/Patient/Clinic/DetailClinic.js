@@ -26,7 +26,7 @@ class DetailSpecialty extends Component {
       console.log("response", response);
       console.log("hi");
 
-      if (response && response.data.errCode === 0) {
+      if (response && response?.data?.errCode === 0) {
         this.setState({
           clinicData: response.data.data.Clinic_infor,
           doctors: response.data.data.Doctor_infor,

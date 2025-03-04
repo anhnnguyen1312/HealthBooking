@@ -40,7 +40,7 @@ class DetailNews extends Component {
       let responseBlog = await getHandbookByIdServices(blogId);
 
       console.log("responseBlog", responseBlog);
-      if (responseBlog.data.errCode === 0) {
+      if (responseBlog?.data?.errCode === 0) {
         this.setState({
           blogId: responseBlog.data.data.data.id,
           contentHTML: responseBlog.data.data.data.contentHTML,

@@ -156,7 +156,7 @@ class Specialty extends Component {
     console.log("his.state.currentClinicId", this.state.currentSpecialtyId);
 
     console.log("response", response);
-    if (response && response.data.errCode === 0) {
+    if (response && response?.data?.errCode === 0) {
       this.toggleModelConfirm("");
       await this.props.getAllSpecialtyRedux();
 

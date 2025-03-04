@@ -39,15 +39,17 @@ class DetailSpecialty extends Component {
       let listProvinceResponse = await getAllCodeServices("PROVINCE");
       console.log("responseSpecialty", responseSpecialty);
       console.log("listProvinceResponse", listProvinceResponse);
-
-      this.setState({
-        specialtyId: specialtyId,
-        introSpecialty: responseSpecialty.data.data.Specialty_infor.description,
-        backgroundImage: responseSpecialty.data.data.Specialty_infor.image,
-        nameSpecialty: responseSpecialty.data.data.Specialty_infor.name,
-        doctors: responseSpecialty.data.data.Doctor_infor,
-        listProvince: this.buildInputSelect(listProvinceResponse.data.data),
-      });
+      if (listProvinceResponse && listProvinceResponse.data?.data) {
+        this.setState({
+          specialtyId: specialtyId,
+          introSpecialty:
+            responseSpecialty.data.data.Specialty_infor.description,
+          backgroundImage: responseSpecialty.data.data.Specialty_infor.image,
+          nameSpecialty: responseSpecialty.data.data.Specialty_infor.name,
+          doctors: responseSpecialty.data.data.Doctor_infor,
+          listProvince: this.buildInputSelect(listProvinceResponse.data.data),
+        });
+      }
     }
   }
   componentDidUpdate(prevProps) {
@@ -93,10 +95,12 @@ class DetailSpecialty extends Component {
         specialtyId,
         provinceId
       );
-      this.setState({
-        selectedProvinceId: provinceId,
-        doctors: responseSpecialty.data.data.Doctor_infor,
-      });
+      if (responseSpecialty && responseSpecialty.data?.data) {
+        this.setState({
+          selectedProvinceId: provinceId,
+          doctors: responseSpecialty.data.data.Doctor_infor,
+        });
+      }
     }
   };
 

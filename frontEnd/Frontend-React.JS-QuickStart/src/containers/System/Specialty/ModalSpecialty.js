@@ -126,7 +126,7 @@ class Specialty extends Component {
           name: specialty,
         });
         console.log(response);
-        if (response && response.data.errCode === 0) {
+        if (response && response?.data?.errCode === 0) {
           toast.success("Thêm chuyên khoa thành công", {
             position: "top-right",
             autoClose: 3000,

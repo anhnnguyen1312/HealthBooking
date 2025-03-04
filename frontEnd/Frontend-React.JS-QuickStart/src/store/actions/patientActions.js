@@ -45,7 +45,7 @@ export const getAllSpecialty = () => {
     try {
       let specialtyData = await getAllSpecialtyServices();
       console.log("specialtyData", specialtyData);
-      if (specialtyData && specialtyData.data.errCode === 0) {
+      if (specialtyData && specialtyData.data?.errCode === 0) {
         dispatch({
           type: actionTypes.GET_ALL_SPECIALTY_SUCCESS,
           data: specialtyData.data.data,
@@ -63,7 +63,7 @@ export const getAllClinicRedux = (isGetImage) => {
       let clinicData = await getAllClinicServices(isGetImage);
       //let clinicData = await getAllClinicServicesByLimit(isGetImage);
 
-      if (clinicData && clinicData.data.errCode === 0) {
+      if (clinicData && clinicData.data?.errCode === 0) {
         dispatch({
           type: actionTypes.GET_ALL_CLINIC_SUCCESS,
           data: clinicData.data.data,
@@ -79,8 +79,7 @@ export const getHandbookRedux = () => {
   return async (dispatch) => {
     try {
       let handbookData = await getAllHandbookServices();
-      console.log("handbookData", handbookData.data.data.data);
-      if (handbookData && handbookData.data.errCode === 0) {
+      if (handbookData && handbookData.data?.errCode === 0) {
         dispatch({
           type: actionTypes.GET_ALL_HANDBOOK_SUCCESS,
           data: handbookData.data.data.data,

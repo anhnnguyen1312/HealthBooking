@@ -29,7 +29,7 @@ class DoctorSchedule extends Component {
     );
     console.log("response", response);
     response &&
-      response.data &&
+      response.data?.data &&
       this.setState({ listSchedule: response.data.data });
   }
   componentDidUpdate(prevProps) {
@@ -90,9 +90,11 @@ class DoctorSchedule extends Component {
       e.target.value
     );
     console.log("response", response);
-    this.setState({
-      listSchedule: response.data.data,
-    });
+    if (response && response?.data?.data) {
+      this.setState({
+        listSchedule: response.data.data,
+      });
+    }
   };
   handleShowPrice = () => {
     // this.setState({ isShowPrice: !this.state.isShowPrice });

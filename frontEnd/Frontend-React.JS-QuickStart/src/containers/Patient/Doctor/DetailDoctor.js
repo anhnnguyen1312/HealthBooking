@@ -30,7 +30,7 @@ class DetailDoctor extends Component {
       : this.props.match.params.id;
 
     let detailDoctor = await getDetailDoctorService(doctorId);
-    if (detailDoctor) {
+    if (detailDoctor && detailDoctor.data?.data) {
       console.log("detailDoctor", detailDoctor);
       this.setState({
         dataCurrentDoctor: detailDoctor.data.data,

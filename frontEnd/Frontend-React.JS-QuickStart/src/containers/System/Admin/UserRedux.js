@@ -81,7 +81,7 @@ class UserRedux extends Component {
       page: PageIndex,
       limit,
     });
-    if (response && response.data.errCode === 0) {
+    if (response && response?.data?.errCode === 0) {
       this.setState({
         keywordSearchUser: keywordSearchUser,
         roleIdSelected: roleIdSelected,

@@ -18,7 +18,7 @@ export const fetchTopDoctor = (limit) => {
   return async (dispatch) => {
     try {
       let res = await getTopDoctorServices(limit);
-      if (res && res.data.errCode === 0) {
+      if (res && res.data?.errCode === 0) {
         dispatch({
           type: actionTypes.FETCH_TOP_DOCTOR_SUCCESS,
           data: res.data.data,
@@ -36,7 +36,7 @@ export const fetchAllDoctor = () => {
     try {
       let res = await getAllDoctorService();
       console.log(res);
-      if (res && res.data.errCode === 0) {
+      if (res && res.data?.errCode === 0) {
         dispatch({
           type: actionTypes.FETCH_ALL_DOCTOR_SUCCESS,
           data: res.data.data,
@@ -61,7 +61,7 @@ export const getDetailDoctor = (id) => {
         let res = await getDetailDoctorService(id);
         dispatch({
           type: actionTypes.GET_DETAIL_DOCTOR_SUCCESS,
-          data: res.data.data,
+          data: res?.data?.data,
         });
       }
     } catch (error) {
@@ -76,7 +76,7 @@ export const fetchAllcodeSchedule = () => {
     try {
       let res = await getAllCodeServices("TIME");
       console.log(res);
-      if (res && res.data.errCode === 0) {
+      if (res && res.data?.errCode === 0) {
         dispatch({
           type: actionTypes.FETCH_ALLCODE_SCHEDULE_SUCCESS,
           data: res.data.data,
@@ -149,7 +149,7 @@ export const getAppointmentDoctor = (doctorId, initDate, statusId) => {
     try {
       let res = await getAppointmentDoctorService(doctorId, initDate, statusId);
       console.log(res, "res");
-      if (res && res.data.errCode === 0) {
+      if (res && res.data?.errCode === 0) {
         //res.data.data.statusId = statusId;
         dispatch({
           type: actionTypes.GET_APPOINTMENT_DOCTOR_SUCCESS,
@@ -187,15 +187,15 @@ export const fetchRelateToDoctorInfor = () => {
       console.log(resListPrice, "resListPrice");
       if (
         resListPrice &&
-        resListPrice.data.errCode === 0 &&
+        resListPrice.data?.errCode === 0 &&
         resListPayment &&
-        resListPayment.data.errCode === 0 &&
+        resListPayment.data?.errCode === 0 &&
         resListProvince &&
-        resListProvince.data.errCode === 0 &&
+        resListProvince.data?.errCode === 0 &&
         resListSpecialty &&
-        resListSpecialty.data.errCode === 0 &&
+        resListSpecialty.data?.errCode === 0 &&
         resListClinics &&
-        resListClinics.data.errCode === 0
+        resListClinics.data?.errCode === 0
       ) {
         console.log(resListPayment, "resListPayment");
 

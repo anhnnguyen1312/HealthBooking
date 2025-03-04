@@ -129,7 +129,7 @@ class ManageClinic extends Component {
     console.log("his.state.currentClinicId", this.state.currentClinicId);
 
     console.log("response", response);
-    if (response && response.data.errCode === 0) {
+    if (response && response?.data?.errCode === 0) {
       this.toggleModelConfirm("");
       await this.props.getAllClinicRedux();
 
