@@ -22,17 +22,17 @@ module.exports = (sequelize, DataTypes) => {
     {
       statusId: DataTypes.STRING,
       doctorId: DataTypes.INTEGER,
-      email: DataTypes.INTEGER,
+      email: DataTypes.STRING,
       patientId: DataTypes.INTEGER,
       date: DataTypes.STRING,
       timeType: DataTypes.STRING,
       bookFor: DataTypes.STRING,
       nameScheduler: DataTypes.STRING,
-      phoneNumberScheduler: DataTypes.INTEGER,
+      phoneNumberScheduler: DataTypes.STRING,
       namePatient: DataTypes.STRING,
-      IDNumber: DataTypes.INTEGER,
+      IDNumber: DataTypes.STRING,
       gender: DataTypes.STRING,
-      phoneNumber: DataTypes.INTEGER,
+      phoneNumber: DataTypes.STRING,
       address: DataTypes.STRING,
       reason: DataTypes.STRING,
       nameDoctor: DataTypes.STRING,
@@ -41,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Booking",
+      freezeTableName: true,
     }
   );
   return Booking;

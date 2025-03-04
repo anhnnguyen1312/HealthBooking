@@ -20,7 +20,7 @@ let postBookAppointment = async (req, res) => {
   } catch (e) {
     return res.status(500).json({
       errCode: 1,
-      errMessage: "Fail to add Booking",
+      errMessage: e,
     });
   }
 };

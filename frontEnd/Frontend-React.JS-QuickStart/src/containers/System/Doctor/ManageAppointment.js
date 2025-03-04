@@ -39,6 +39,7 @@ class ManageAppointment extends Component {
     await this.props.getAppointmentDoctorRedux(
       this.props.userInfo.id,
       initDate,
+
       this.props.statusIdRedux
     );
   }
@@ -124,7 +125,7 @@ class ManageAppointment extends Component {
       { text: <FormattedMessage id="appointment.confirmed" />, id: "S3" },
       { text: <FormattedMessage id="appointment.canceled" />, id: "S4" },
     ];
-
+    console.log("listAppointment", listAppointment);
     return (
       <div className="manage-schedule-container mt-2">
         {isLoading && (
@@ -255,9 +256,10 @@ class ManageAppointment extends Component {
                       <tr key={index}>
                         <th scope="row">{index + 1}</th>
                         <td>
-                          {languageRedux === LANGUAGES.VI
+                          {/* {languageRedux === LANGUAGES.VI
                             ? item.timeTypeDataBooking.valueVi
-                            : item.timeTypeDataBooking.valueEn}
+                            : item.timeTypeDataBooking.valueEn} */}
+                          {item.exactTime}
                         </td>
                         <td>{item.namePatient}</td>
 

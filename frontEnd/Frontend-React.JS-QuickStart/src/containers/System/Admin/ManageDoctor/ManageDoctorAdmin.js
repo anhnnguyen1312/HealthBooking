@@ -166,7 +166,11 @@ class ManageDoctorAdmin extends Component {
     let { detailDoctorRedux } = this.props;
     console.log("detailDoctorRedux", detailDoctorRedux);
 
-    if (detailDoctorRedux.Markdown && detailDoctorRedux.Doctor_infor) {
+    if (
+      detailDoctorRedux &&
+      detailDoctorRedux.Markdown &&
+      detailDoctorRedux.Doctor_infor
+    ) {
       let Markdown = detailDoctorRedux.Markdown;
       let doctor_infor = detailDoctorRedux.Doctor_infor;
       this.setState({

@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.Booking, {
         foreignKey: "patientId",
       });
-      User.hasOne(models.Blogs, {
+      User.hasOne(models.Blog, {
         foreignKey: "UserId",
       });
     }
@@ -44,16 +44,18 @@ module.exports = (sequelize, DataTypes) => {
       gender: DataTypes.STRING,
       image: DataTypes.STRING,
       positionId: DataTypes.STRING,
-      isActive: DataTypes.TINYINT(1),
+      isActive: DataTypes.SMALLINT,
       roleId: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: "User",
+      freezeTableName: true,
     }
   );
   return User;
 };
+// INSERT INTO "Users" ("id","firstName","lastName","email","password","address","image","gender","phone","positionId","isActive","roleId","createdAt","updatedAt","deletedAt")
 // import Model from "sequelize";
 // export default function (sequelize, DataTypes) {
 //   class User extends Model {

@@ -293,21 +293,23 @@ let handleGetAppointmentDoctor = async (data) => {
         const dataBooking = await db.Booking.findAll({
           where: {
             doctorId: data.doctorId,
-            statusId: data.statusId,
-            date: data.date,
-          },
-          include: [
-            {
-              model: db.User,
+            //doctorId: 12,
 
-              // attributes: ["valueEn", "valueVi"],
-            },
-            {
-              model: db.Allcode,
-              as: "timeTypeDataBooking",
-              // attributes: ["valueEn", "valueVi"],
-            },
-          ],
+            statusId: data.statusId,
+            date: data.date.toString(),
+          },
+          // include: [
+          //   {
+          //     model: db.User,
+
+          //     // attributes: ["valueEn", "valueVi"],
+          //   },
+          // {
+          //   model: db.Allcode,
+          //   as: "timeTypeDataBooking",
+          //   // attributes: ["valueEn", "valueVi"],
+          // },
+          // ],
         });
         console.log("dataBooking", dataBooking);
         resolve({

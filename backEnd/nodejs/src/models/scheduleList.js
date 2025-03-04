@@ -26,7 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "ScheduleLists",
+      modelName: "ScheduleList",
+      freezeTableName: true,
     }
   );
   return ScheduleList;

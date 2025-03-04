@@ -73,8 +73,13 @@ let handlerSaveDetailDoctor = async (data) => {
           md.contentHTML = data.contentHTML;
           md.contentMarkdown = data.contentMarkdown;
           md.description = data.description;
-
-          await md.save();
+          console.log(md, "md");
+          if (md instanceof db.Markdown) {
+            await md.save();
+          } else {
+            console.error("md is not a valid instance.");
+          }
+          //await md.save();
           // resolve({
           //   errCode: 0,
           //   errMessage: "Update Markdown success",
@@ -170,6 +175,7 @@ let handlerSaveDetailDoctor = async (data) => {
 let handlerGetDetailDoctorById = async (data) => {
   return new Promise(async (resolve, reject) => {
     try {
+      console.log("data", data);
       if (!data) {
         resolve({
           errCode: 1,
@@ -216,6 +222,7 @@ let handlerGetDetailDoctorById = async (data) => {
           raw: true,
           nest: true,
         });
+        console.log("dataDoctor", dataDoctor);
 
         resolve({
           errCode: 0,
@@ -248,7 +255,7 @@ let handlebulkCreateSchedule = (data) => {
             return item;
           });
           console.log(data);
-          let existing = await db.ScheduleLists.findAll({
+          let existing = await db.ScheduleList.findAll({
             where: { doctorId: data[0]?.doctorId },
             attributes: {
               include: ["doctorId", "date", "timeType", "maxNumber"],
@@ -277,7 +284,7 @@ let handlebulkCreateSchedule = (data) => {
             console.log("toCreate===========");
             if (toCreate && toCreate.length > 0) {
               console.log(toCreate);
-              await db.ScheduleLists.bulkCreate(toCreate);
+              await db.ScheduleList.bulkCreate(toCreate);
               resolve({
                 errCode: 0,
                 errMessage: "ok",
@@ -289,7 +296,7 @@ let handlebulkCreateSchedule = (data) => {
               });
             }
           } else {
-            await db.ScheduleLists.bulkCreate(data);
+            await db.ScheduleList.bulkCreate(data);
             resolve({
               errCode: 0,
               errMessage: "Ok",
@@ -306,7 +313,7 @@ let handlegetScheduleDoctorByDateService = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
       console.log(data);
-      const schedule = await db.ScheduleLists.findAll({
+      const schedule = await db.ScheduleList.findAll({
         where: { doctorId: data.doctorId, date: data.date },
         include: [
           {
@@ -339,7 +346,7 @@ let handlegetScheduleDoctorByDateService = (data) => {
 let handleGetAllHandbook = async () => {
   return new Promise(async (resolve, reject) => {
     try {
-      let clinic = await db.Blogs.findAll();
+      let clinic = await db.Blog.findAll();
 
       resolve({
         errCode: 0,
@@ -362,7 +369,7 @@ let handleGetHandbookById = async (id) => {
           //data: data,
         });
       } else {
-        const dataBlogs = await db.Blogs.findOne({
+        const dataBlogs = await db.Blog.findOne({
           where: { id: id },
         });
         console.log("dataBlogs", dataBlogs);
@@ -390,7 +397,7 @@ let handleDeleteHandbookById = async (id) => {
           //data: data,
         });
       } else {
-        const blogs = await db.Blogs.findOne({
+        const blogs = await db.Blog.findOne({
           where: { id: id },
           raw: false,
         });
@@ -429,7 +436,7 @@ let handlePostHandBook = async (data) => {
         });
       } else {
         console.log("data", data);
-        await db.Blogs.create({
+        await db.Blog.create({
           userId: data.userId,
           tittle: data.tittle,
           imageLogo: data.imageLogo,

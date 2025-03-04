@@ -34,7 +34,7 @@
 "use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("Bookings", {
+    await queryInterface.createTable("Booking", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -42,7 +42,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       statusId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       doctorId: {
         type: Sequelize.INTEGER,
@@ -51,7 +51,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       email: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       date: {
         type: Sequelize.STRING,
@@ -66,19 +66,19 @@ module.exports = {
         type: Sequelize.STRING,
       },
       phoneNumberScheduler: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       namePatient: {
         type: Sequelize.STRING,
       },
       IDNumber: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       gender: {
         type: Sequelize.STRING,
       },
       phoneNumber: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       address: {
         type: Sequelize.STRING,
@@ -86,9 +86,7 @@ module.exports = {
       reason: {
         type: Sequelize.STRING,
       },
-      reason: {
-        type: Sequelize.STRING,
-      },
+
       nameDoctor: {
         type: Sequelize.STRING,
       },
@@ -104,6 +102,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("Bookings");
+    await queryInterface.dropTable("Booking");
   },
 };
