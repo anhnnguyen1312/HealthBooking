@@ -30,6 +30,9 @@ import { CustomToastCloseButton } from "../components/CustomToast";
 import ConfirmModal from "../components/ConfirmModal";
 import Doctor from "../routes/Doctor";
 import DetailNews from "./Patient/HandBook/DetailNews";
+import ListSpecialty from "./ListPage/ListSpecialty";
+import ListDoctor from "./ListPage/ListDoctor";
+import ListClinic from "./ListPage/ListClinic";
 
 class App extends Component {
   handlePersistorState = () => {
@@ -79,6 +82,18 @@ class App extends Component {
                     <Route
                       path={path.DETAIL_SPECIALTY}
                       component={DetailSpecialty}
+                    />
+                    <Route
+                      path={path.LIST_SPECIALTY_PAGE}
+                      component={ListSpecialty}
+                    />
+                    <Route
+                      path={path.LIST_DOCTOR_PAGE}
+                      component={ListDoctor}
+                    />
+                    <Route
+                      path={path.LIST_CLINIC_PAGE}
+                      component={ListClinic}
                     />
                     <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
                     <Route path={path.DETAIL_NEWS} component={DetailNews} />

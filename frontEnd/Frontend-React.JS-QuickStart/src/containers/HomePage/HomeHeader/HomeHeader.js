@@ -7,12 +7,15 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import logo2 from "../../../assets/images/2.png";
 import logo3 from "../../../assets/images/3.png";
-
+// import { useNavigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import { MdManageAccounts } from "react-icons/md";
+import * as actions from "../../../store/actions";
 import "./HomeHeader.scss";
 
 import { IoLogIn } from "react-icons/io5";
 import { BiUserCircle } from "react-icons/bi";
-// import Menu from '../Sections/Menu/Menu';
+// import Menu from "../Sections/Menu/Menu";
 import Tippy from "@tippyjs/react";
 import { withRouter } from "react-router";
 
@@ -36,6 +39,11 @@ class HomeHeader extends Component {
   //     }
   //     return;
   // };
+  handleLogOut = () => {
+    window.location.href = `/home`;
+    this.props.processLogout();
+  };
+
   handleChangeLanguage = (language) => {
     console.log(language);
     // this.props.changeLanguageRedux(language);
@@ -52,12 +60,18 @@ class HomeHeader extends Component {
   };
   componentDidMount() {}
   // executeScroll = () => this.myRef.current.scrollIntoView();
-  handleClick = (modal) => {
-    this.props.toggleModel(modal);
+  handleClick = (link) => {
+    // this.props.toggleModel(modal);
+    console.log("link", link);
+    // const navigate = useNavigate();
+    // navigate(`${link}`);
+    window.location.href = `/${link}`;
+    //link && <Redirect to="/list-specialty" />;
   };
   render() {
     let { isLoggedIn } = this.props;
-
+    console.log("this.props.language", this.props.language);
+    console.log("this.props.userInfo", this.props.userInfo);
     return (
       <div className="home-header-container">
         <div className="home-header-content w80">
@@ -146,35 +160,52 @@ class HomeHeader extends Component {
                 EN
               </span>
             </div> */}
-            {/* {!isLoggedIn ? (
-                            <Link to="/login">
-                                <div className="login" text="Login">
-                                    <IoLogIn />
-                                    <span>
-                                        <FormattedMessage id="home-header.login" />
-                                    </span>
-                                </div>
-                            </Link>
-                        ) : (
-                            <Menu items={dataMenuUser}>
-                                <div className="btn_user">
-                                    <BiUserCircle className="icon_user" />
-                                </div>
-                            </Menu>
-                        )} */}
-
-            <Link to="/login">
-              <div className="login" text="Login">
+            {((this.props.userInfo && this.props.userInfo?.roleId === "R1") ||
+              this.props.userInfo?.roleId === "R2") && (
+              // <Menu items={dataMenuUser}>
+              // <div className="btn_user">
+              //   <MdManageAccounts />
+              //   <span>
+              //     {this.props.language === "en" ? "Dashboard" : "Hệ thống"}
+              //   </span>
+              // </div>
+              <Tippy
+                delay={[0, 100]}
+                content={
+                  this.props.language === "en" ? "Dashboard" : "Hệ thống"
+                }
+              >
+                <div className="btn_user">
+                  <MdManageAccounts />
+                  {/* <span>
+                  {this.props.language === "en" ? "Dashboard" : "Hệ thống"}
+                </span> */}
+                </div>
+              </Tippy>
+              // </Menu>
+            )}
+            {isLoggedIn ? (
+              <div
+                className="login"
+                text="Login"
+                onClick={(e) => this.handleLogOut()}
+              >
                 <IoLogIn />
                 <span>
-                  {isLoggedIn ? (
-                    <FormattedMessage id="home-header.logout" />
-                  ) : (
-                    <FormattedMessage id="home-header.login" />
-                  )}
+                  <FormattedMessage id="home-header.logout" />
                 </span>
               </div>
-            </Link>
+            ) : (
+              // log in
+              <Link to="/login" style={{ paddingBottom: "3px" }}>
+                <div className="login" text="Login">
+                  <IoLogIn />
+                  <span>
+                    <FormattedMessage id="home-header.login" />
+                  </span>
+                </div>
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -186,6 +217,8 @@ const mapStateToProps = (state) => {
   return {
     isLoggedIn: state.user.isLoggedIn,
     language: state.app.language,
+    userInfo: state.user.userInfo,
+
     // listDataSpecialtyRedux: state.patient.listDataSpecialty,
   };
 };
@@ -193,6 +226,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     changeLanguageRedux: (language) => dispatch(changeLanguageApp(language)),
+    processLogout: () => dispatch(actions.processLogout()),
+
     //changeLanguageRedux: (language) => console.log("language action", language),
   };
 };

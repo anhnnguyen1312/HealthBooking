@@ -31,14 +31,14 @@ export const adminMenu = [
     ],
   },
 
-  {
-    //quản lý cẩm nang:
-    name: "menu.admin.manage-handbook",
-    menus: [
-      { name: "menu.admin.handbook", link: "/doctor/manage-handbook" },
-      { name: "menu.admin.listHandbook", link: "/doctor/list-handbook" },
-    ],
-  },
+  // {
+  //   //quản lý cẩm nang:
+  //   name: "menu.admin.manage-handbook",
+  //   menus: [
+  //     { name: "menu.admin.handbook", link: "/doctor/manage-handbook" },
+  //     { name: "menu.admin.listHandbook", link: "/doctor/list-handbook" },
+  //   ],
+  // },
   {
     //quản lý cẩm nang:
     name: "menu.admin.news",
@@ -60,14 +60,14 @@ export const doctorMenu = [
       },
     ],
   },
-  {
-    //quản lý cẩm nang:
-    name: "menu.admin.manage-handbook",
-    menus: [
-      { name: "menu.admin.handbook", link: "/doctor/manage-handbook" },
-      { name: "menu.admin.listHandbook", link: "/doctor/list-handbook" },
-    ],
-  },
+  // {
+  //   //quản lý cẩm nang:
+  //   name: "menu.admin.manage-handbook",
+  //   menus: [
+  //     { name: "menu.admin.handbook", link: "/doctor/manage-handbook" },
+  //     { name: "menu.admin.listHandbook", link: "/doctor/list-handbook" },
+  //   ],
+  // },
   {
     //quản lý cẩm nang:
     name: "menu.admin.news",

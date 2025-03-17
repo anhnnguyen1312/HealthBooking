@@ -76,6 +76,10 @@ class Header extends Component {
     }
     return;
   };
+  handleLogOut = () => {
+    //window.location.href = `/home`;
+    this.props.processLogout();
+  };
   render() {
     const { processLogout, userInfo } = this.props;
     const { user } = this.state;
@@ -110,7 +114,7 @@ class Header extends Component {
             </span>
             <span className="name-user">
               {userInfo && userInfo.lastName
-                ? userInfo.firstName + " " + user.lastName
+                ? userInfo.firstName + " " + userInfo.lastName
                 : ""}
             </span>
           </div>
@@ -127,7 +131,7 @@ class Header extends Component {
           </span>
           <div
             className="btn btn-logout"
-            onClick={processLogout}
+            onClick={(e) => this.handleLogOut()}
             title="Log out"
           >
             <i className="fas fa-sign-out-alt"></i>

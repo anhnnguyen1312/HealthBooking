@@ -10,7 +10,8 @@
     "check-health": "General health check",
     "support": "Support",
     "login": "Login",
-    "welcome": "Welcome"
+    "welcome": "Welcome",
+    "logout": "Logout"
 },
  "banner": {
     "title": "MEDICAL PLATFORM",
@@ -60,7 +61,7 @@
     },
     "doctor": {
         "manage-schedule": "Manage Doctor`s schedule",
-        "manage-appointment": "Manage Doctor`s appointment"
+        "manage-appointment": "Manage appointment"
     }
 },
 "manage-user": {
@@ -86,7 +87,7 @@
     "specialty": "Popular specialties",
     "clinic": "Outstanding medical facility",
     "handbook": "Handbook",
-    "about": "Media talk about BookingCare",
+    "about": "Media talk about HealthBooking",
     "search": "Search",
     "all-handbook": "All"
 },
@@ -127,7 +128,7 @@
         "text2": "and book (Scheduling fee 0 VND)",
         "addressClinic": "Medical address",
         "price": "Price",
-        "priceText": "Prioritize check-ups before booking through BookingCare",
+        "priceText": "Prioritize check-ups before booking through HealthBooking",
         "typePaymentText": "Patients can pay in"
     },
     "verify": {

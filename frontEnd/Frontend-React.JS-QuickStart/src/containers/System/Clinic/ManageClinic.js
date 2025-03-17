@@ -210,7 +210,7 @@ class ManageClinic extends Component {
             <div className="action-container">
               {/* <SearchInput placeholder="Tìm kiếm..." handleSearch={this.handleSearch} delay={800} /> */}
               <button
-                className="btn btn-primary"
+                className="btn btn-primary button"
                 onClick={() => this.handleToggleModel()}
               >
                 Thêm mới phòng khám
@@ -239,12 +239,12 @@ class ManageClinic extends Component {
                               <img src={item.imageLogo} atl="img"></img>
                             </div>
                           </td>
-                          <td>{item.nameClinic}</td>
+                          <td>{item.name}</td>
 
-                          <td>{item.addressClinic}</td>
+                          <td>{item.address}</td>
                           <td>
                             <button
-                              className="btn btn-warning"
+                              className="btn btn-warning button"
                               onClick={() => this.toggleModelConfirm(item.id)}
                             >
                               Xoá

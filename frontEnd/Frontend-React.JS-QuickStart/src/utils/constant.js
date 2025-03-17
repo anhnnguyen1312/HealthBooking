@@ -11,6 +11,10 @@ export const path = {
   DETAIL_NEWS: "/detail-news/:id",
   VERIFY_BOOING: "/verify-booking",
   DETAIL_USER: "/detail-user",
+  LIST_SPECIALTY_PAGE: "/list-specialty",
+  LIST_CLINIC_PAGE: "/list-clinic",
+  LIST_NEWS_PAGE: "/list-news",
+  LIST_DOCTOR_PAGE: "/list-doctor",
 
   DOCTOR: "/doctor",
 };

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import logo from "../../../assets/images/logo.png";
 import {
   IoLocationSharp,
   IoCheckmarkSharp,
@@ -31,12 +31,13 @@ class Footer extends Component {
                 <div className="container-footer py-4">
                   <div className="row gy-4 gx-5">
                     <div className="infor-footer col-lg-5 col-md-6">
-                      <div
+                      {/* <div
                         className="image-footer"
                         style={{
                           backgroundImage: `url(https://healthbooking.vn/assets/icon/healthbooking-2020.svg)`,
                         }}
-                      ></div>
+                      ></div> */}
+                      <img src={logo} className="image-footer" />
                       <h2 className="company">
                         Công ty Cổ phần Công nghệ healthbooking
                       </h2>
@@ -49,27 +50,6 @@ class Footer extends Component {
                         Minh cấp ngày 1/11/2022
                       </div>
                       <div className="iso"></div>
-                    </div>
-
-                    <div className="contact-footer col-lg-4 col-md-6">
-                      <a>
-                        <li>Liên hệ hợp tác</li>
-                      </a>
-                      <a>
-                        <li>Gói chuyển đổi số doanh nghiệp</li>
-                      </a>
-                      <a>
-                        <li>Tuyển dụng</li>
-                      </a>
-                      <a>
-                        <li>Câu hỏi thường gặp</li>
-                      </a>
-                      <a>
-                        <li>Điều khoản sử dụng</li>
-                      </a>
-                      <a>
-                        <li>Chính sách Bảo mật</li>
-                      </a>
                     </div>
 
                     <div className="branch-footer col-lg-3 col-md-6">

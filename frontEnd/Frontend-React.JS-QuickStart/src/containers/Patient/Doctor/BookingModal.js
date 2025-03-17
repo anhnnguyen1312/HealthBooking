@@ -233,14 +233,14 @@ class BookingModal extends Component {
                 Đặt cho người thân
               </label>
             </div>
-            <div className="form-user-container">
+            <div className="form-user-container container">
               {bookFor === "others" && (
                 <label className="label-primary">
                   Thông tin người đặt lịch
                 </label>
               )}
               {bookFor === "others" && (
-                <div className="form-row ">
+                <div className="container ">
                   <div className="form-group col-6">
                     <input
                       type="text"
@@ -339,7 +339,7 @@ class BookingModal extends Component {
                     );
                   })}
               </div>
-              <div className="form-row ">
+              <div className=" container">
                 <div className="form-group col-6">
                   <input
                     type="text"

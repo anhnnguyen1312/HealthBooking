@@ -111,3 +111,13 @@
     font-size: 14px;
     margin-top: 5px;
 }
+
+.container{
+    flex-direction: column;
+    padding: 0;
+    display: flex;
+    gap: 10px
+}
+.button{
+    height: fit-content;
+}

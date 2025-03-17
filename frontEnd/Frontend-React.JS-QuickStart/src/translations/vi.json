@@ -59,8 +59,8 @@
             "listNews": "Danh sách tin tức"
         },
         "doctor": {
-            "manage-schedule": "Quản lý kế hoạch khám bệnh",
-            "manage-appointment": "Quản lý lịch hẹn với bệnh nhân"
+            "manage-schedule": "Quản lý lịch khám bệnh",
+            "manage-appointment": "Quản lý lịch hẹn bệnh nhân"
         }
     },
     "manage-user": {
@@ -86,7 +86,7 @@
         "specialty": "Chuyên khoa phổ biến",
         "clinic": "Cơ sở y tế nổi bật",
         "handbook": "Cẩm nang",
-        "about": "Truyền thông nói về BookingCares",
+        "about": "Truyền thông nói về HealthBooking",
         "search": "Tìm kiếm",
         "all-handbook": "Tất cả bài viết"
     },
@@ -128,7 +128,7 @@
             "text2": "và đặt (Phí đặt lịch 0đ)",
             "addressClinic": "Địa chỉ khám",
             "price": "Giá khám",
-            "priceText": "Được ưu tiên khám trước khi đật khám qua BookingCare",
+            "priceText": "Được ưu tiên khám trước khi đật khám qua HealthBooking",
             "typePaymentText": "Người bệnh có thể thanh toán chi phí bằng hình thức"
         },
         "verify": {

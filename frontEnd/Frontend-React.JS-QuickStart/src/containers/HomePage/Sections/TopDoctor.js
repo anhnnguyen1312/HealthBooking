@@ -135,7 +135,6 @@ const mapStateToProps = (state) => {
     languageRedux: state.app.language,
     keyForm: state.admin.keyForm,
     topDoctorsRedux: state.doctor.topDoctors,
-    topDoctorsRedux: state.doctor.topDoctors,
     // listDataClinicRedux: state.patient.listDataClinic,
     // listDataSpecialtyRedux: state.patient.listDataSpecialty,
   };
